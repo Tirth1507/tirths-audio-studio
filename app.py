@@ -16,6 +16,7 @@ from werkzeug.utils import secure_filename
 app = Flask(__name__)
 
 
+
 @app.route("/sitemap.xml")
 def sitemap():
     pages = [
@@ -33,6 +34,7 @@ def sitemap():
     xml += "</urlset>"
 
     return xml, 200, {"Content-Type": "application/xml"}
+
 
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
