@@ -15,6 +15,26 @@ from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 
+
+@app.route("/sitemap.xml")
+def sitemap():
+    pages = [
+        "https://tirths-audio-studio.onrender.com/",
+        "https://tirths-audio-studio.onrender.com/splitter",
+        "https://tirths-audio-studio.onrender.com/merger",
+    ]
+
+    xml = '<?xml version="1.0" encoding="UTF-8"?>'
+    xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+
+    for page in pages:
+        xml += f"<url><loc>{page}</loc></url>"
+
+    xml += "</urlset>"
+
+    return xml, 200, {"Content-Type": "application/xml"}
+
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 UPLOAD_FOLDER = os.path.join(BASE_DIR, "uploads")
 OUTPUT_FOLDER = os.path.join(BASE_DIR, "outputs")
