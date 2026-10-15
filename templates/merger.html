@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song Merger | Tirth's Audio Studio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Gloock&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="wrap">
+            <a class="brand" href="/"><span class="brand-disc"></span>Tirth's Audio Studio</a>
+            <nav class="site-nav" aria-label="Main">
+                <a href="/">Home</a>
+                <a href="/splitter">Song Splitter</a>
+                <a href="/merger" aria-current="page">Song Merger</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="wrap-narrow">
+
+            <header class="page-head">
+                <h1>Song Merger</h1>
+                <p>Combine your favourite songs into one perfect mix.</p>
+            </header>
+
+            <!-- Upload -->
+            <section class="merger-card">
+                <h2>Select your songs</h2>
+                <p>
+                    Upload at least two songs. You can rearrange them,
+                    trim individual tracks, and apply fade effects.
+                </p>
+
+                <label for="songFiles" class="upload-label">Choose audio or video files</label>
+
+                <input
+                    type="file"
+                    id="songFiles"
+                    accept=".mp3,.wav,.ogg,.m4a,.aac,.flac,.mp4,audio/*,video/mp4"
+                    multiple
+                >
+
+                <p class="helper-text">Supported formats: MP3, WAV, OGG, M4A, AAC, FLAC and MP4.</p>
+            </section>
+
+            <!-- Playlist -->
+            <section class="merger-card">
+                <div class="section-heading">
+                    <h2>Your playlist</h2>
+                    <span id="songCount">0 songs</span>
+                </div>
+
+                <p class="helper-text">Use the arrows to change the order of your songs.</p>
+
+                <div id="songList">
+                    <p id="emptyMessage" class="helper-text">Your selected songs will appear here.</p>
+                </div>
+            </section>
+
+            <!-- Merge -->
+            <section class="merger-card">
+                <h2>Create your mix</h2>
+                <p>Your songs will be combined in playlist order.</p>
+
+                <button type="button" id="mergeButton" disabled style="margin-top:16px">
+                    🎵 Merge songs
+                </button>
+
+                <p id="statusMessage" role="status" aria-live="polite"></p>
+
+                <div id="resultSection" hidden>
+                    <h3>✅ Your merged song is ready</h3>
+
+                    <audio id="mergedAudio" controls preload="metadata"></audio>
+
+                    <a id="downloadButton" class="download-button" href="#" download>
+                        ⬇️ Download merged MP3
+                    </a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>Made with love for your special moments. &copy; 2026 Tirth's Audio Studio</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/merger.js') }}"></script>
+
+</body>
+</html>

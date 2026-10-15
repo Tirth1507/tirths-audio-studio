@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tirth's Audio Studio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Gloock&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="wrap">
+            <a class="brand" href="/"><span class="brand-disc"></span>Tirth's Audio Studio</a>
+            <nav class="site-nav" aria-label="Main">
+                <a href="/splitter">Song Splitter</a>
+                <a href="/merger">Song Merger</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="wrap">
+                <div>
+                    <h1>Cut and join songs into the mix for your big day.</h1>
+                    <p class="hero-lead">
+                        Trim each song to the part you love, put the songs in order,
+                        and download one clean file to play at the wedding.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="/splitter" class="btn-primary-custom">Trim a song</a>
+                        <a href="/merger" class="btn-outline-custom">Merge songs</a>
+                    </div>
+                </div>
+
+                <div class="vinyl-stage" aria-hidden="true">
+                    <div class="vinyl">
+                        <div class="vinyl-label"><span>Tirth's<br>Audio Studio</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tools">
+            <div class="wrap">
+                <div class="tools-head">
+                    <h2>Two tools, one finished playlist</h2>
+                    <p>Start with the splitter to keep only the best part of each song, then merge them into a single track.</p>
+                </div>
+
+                <div class="tool-grid">
+                    <a href="/splitter" class="tool tool--split">
+                        <div class="wave" aria-hidden="true">
+                            <i style="--h:30"></i><i style="--h:55"></i><i style="--h:40"></i><i style="--h:70"></i><i style="--h:45"></i><i style="--h:25"></i><i style="--h:60"></i><i style="--h:35"></i><i style="--h:50"></i><i style="--h:30"></i><i style="--h:65"></i><i style="--h:90"></i><i style="--h:100"></i><i style="--h:75"></i><i style="--h:95"></i><i style="--h:60"></i><i style="--h:85"></i><i style="--h:100"></i><i style="--h:70"></i><i style="--h:90"></i><i style="--h:55"></i><i style="--h:80"></i><i style="--h:40"></i><i style="--h:60"></i><i style="--h:30"></i><i style="--h:50"></i><i style="--h:25"></i><i style="--h:45"></i><i style="--h:20"></i><i style="--h:35"></i>
+                        </div>
+                        <div>
+                            <h3>Song Splitter</h3>
+                            <p>Choose where each song starts and ends, listen to the clip, and download it.</p>
+                            <p class="tool-cta" style="margin-top:18px">Start trimming</p>
+                        </div>
+                    </a>
+
+                    <a href="/merger" class="tool tool--merge">
+                        <div class="tracks" aria-hidden="true">
+                            <b>Entrance</b><b>Dance floor</b><b>Finale</b>
+                        </div>
+                        <div>
+                            <h3>Song Merger</h3>
+                            <p>Line up your songs, reorder them, and export one dance mix.</p>
+                            <p class="tool-cta" style="margin-top:18px">Start merging</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="how">
+            <div class="wrap">
+                <h2>How it works</h2>
+                <ol class="steps">
+                    <li><strong>Upload your songs</strong>MP3, WAV, M4A, FLAC and more. Video files work too.</li>
+                    <li><strong>Pick the parts you want</strong>Set start and end times, then listen before you save.</li>
+                    <li><strong>Download your mix</strong>Get each clip separately, or one merged MP3.</li>
+                </ol>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Made with love for your special moments. &copy; 2026 Tirth's Audio Studio</p>
+    </footer>
+
+</body>
+</html>
