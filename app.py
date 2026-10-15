@@ -16,6 +16,14 @@ from werkzeug.utils import secure_filename
 app = Flask(__name__)
 
 
+@app.route("/robots.txt")
+def robots():
+    return """User-agent: *
+Allow: /
+
+Sitemap: https://tirths-audio-studio.onrender.com/sitemap.xml
+""", 200, {"Content-Type": "text/plain"}
+
 
 @app.route("/sitemap.xml")
 def sitemap():
